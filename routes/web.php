@@ -48,6 +48,8 @@ Route::prefix('customer')->group(function () {
     });
 });
 
+
 Route::group(['prefix' => 'customers'], function () {
     Route::get('/',[\App\Http\Controllers\CustomerController::class, 'index'])->name('customers.index');
 });
+Route::get('/tasks/create', [TaskController::class, 'create'])->name('tasks.create');
